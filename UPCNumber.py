@@ -1,7 +1,7 @@
 def is_valid_upc(upc_list):
     """Function is_valid_upc
-    :param upc_list: List of integers, a possible UPC number
-    :return: Boolean, indicating whether the given input is valid or not
+    Input: List of integers, a possible UPC number
+    Returns: Boolean, indicating whether the given input is valid or not
     """
     # Initialize odd_sum
     odd_sum = 0
@@ -56,21 +56,26 @@ def main():
 
     # # User would enter the consecutive upc number
     # upc_number = input("Enter upc number ")
-    # # Consecutive string to list of integer
+    # # Consecutive list of string to list of integer
     # upc_list = []
     # for i in str(upc_number):
     #     upc_list.append(int(i))
-    # # # We would use list comprehension
+    # # # We would use list comprehension for list of string to list of integer
     # # upc_list = [int(i) for i in str(upc_number)]
-    # # # We would use map()
+    # # # We would use map() for list of string to list of integer
     # # upc_list = list(map(int, str(upc_number)))
+    # # # We would use lambda for list of string to list of integer
+    # # upc_list = list(map(lambda i: int(i), str(upc_number)))
 
-    # the number above is written from left to right,
-    # but the algorithm goes right to left,
-    # so we say 9 is at position 0, 8 is at position 1, etc
-    # upc_list.reverse()
     test_input = is_valid_upc(upc_list)
     print(test_input)
+    # # List of integer to list of string
+    # number_list = [3, 6, 9]
+    # str_List = list(map(str, number_list))
+    # print(str_List)
+    # for i in str_List:
+    #     str_list_index = str_List.index(i)
+    #     print(str_list_index)
 
 
 main()
