@@ -4,6 +4,7 @@ RED_LINE = ["Ashmont", "Shawmut", "Fields Corner", "Savin Hill", "JFK/UMass", "A
             "Alewife"]
 
 # List of string to uppercase
+# Accept upper/lowercase station names, no matter how the user chooses to capitalize
 UPPERCASE_RED_LINE = []
 for station in RED_LINE:
     UPPERCASE_RED_LINE.append(station.upper())
@@ -19,12 +20,10 @@ def is_valid_station(station_name):
     Input: station name, a string.
     Returns: boolean, True if station is in the red line, False otherwise
     """
+    # Accept upper/lowercase station names, no matter how the user chooses to capitalize
+    # String to uppercase
     station_name = station_name.upper()
     return station_name in RED_LINE
-    # if station_name in RED_LINE:
-    #     return True
-    # else:
-    #     return False
 
 
 def get_direction(start_station, end_station):
@@ -34,6 +33,8 @@ def get_direction(start_station, end_station):
     i.  If either station doesn’t exist on the red line, return the string ​"no destination found"​.
     ii. If both stations are the same, return ​"no destination found"
     """
+    # Accept upper/lowercase station names, no matter how the user chooses to capitalize
+    # String to uppercase
     start_station = start_station.upper()
     end_station = end_station.upper()
     if (start_station not in RED_LINE) or (end_station not in RED_LINE):
@@ -52,6 +53,8 @@ def get_num_stops(start_station, end_station):
     Returns: number of stops from start to end, a positive integer.
     If either station doesn’t exist on the red line, or if both stations are the same, return 0
     """
+    # Accept upper/lowercase station names, no matter how the user chooses to capitalize
+    # String to uppercase
     start_station = start_station.upper()
     end_station = end_station.upper()
     if (start_station not in RED_LINE) or (end_station not in RED_LINE):
