@@ -54,7 +54,7 @@ def main():
     # for i in range(0, len(upc_list)):
     #     upc_list[i] = int(upc_list[i])
 
-    # # User would enter the consecutive upc number
+    # # User would enter the pure digit upc number
     # upc_number = input("Enter upc number ")
     # # Consecutive list of string to list of integer
     # upc_list = []
