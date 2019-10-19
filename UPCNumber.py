@@ -19,13 +19,13 @@ def is_valid_upc(upc_list):
     upc_list.reverse()
     # Use a loop to find the UPC number sum result
     upc_list_index = 0
-    for i in upc_list:
+    for element in upc_list:
         # Digits in even positions, including zero: no change
         if upc_list_index % 2 == 0:
-            even_sum = even_sum + i
+            even_sum = even_sum + element
         else:
             # Digits in odd positions: *3
-            odd_sum = odd_sum + i * 3
+            odd_sum = odd_sum + element * 3
 
         upc_list_index += 1
 
