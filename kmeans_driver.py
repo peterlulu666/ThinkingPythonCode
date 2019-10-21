@@ -1,3 +1,6 @@
+import math
+import random
+
 import kmeans_viz
 
 # Your initial dataset is this list of lists, containing 100 2-dimensional points
@@ -19,30 +22,65 @@ DATA = [[-32.97, -21.06], [9.01, -31.63], [-20.35, 28.73], [-0.18, 26.73], [-25.
         [-20.71, -20.94], [35.91, -20.07], [42.81, -21.88], [5.1, 9.33], [-15.8, -18.47], [5.39, -26.82],
         [-40.53, -17.16], [-29.54, 23.72], [7.8, 23.4], [-22.19, -27.76], [-23.48, -25.01], [-21.2, -21.74],
         [23.14, -24.14], [-28.13, -13.04], [-24.38, -6.79]]
-# Set the number of clusters (i.e., the value of ​k​ in ​k-means clustering​). We’ll use 4
-number_of_clusters = 4
-# Choose 4 random points to be your “centroids.” Our centroids will be chosen from our initial data.
-# Choose 4 points at random from the input data set.
-random_points = []
-# data​, a list of lists, each containing exactly
-# 2 floats to represent a 2-dimensional point. For this program, ​
-# data​ will contain 100 points. (This should be the same as input data.
-data = DATA
-# centroids​, a list of lists, each containing exactly
-# 2 floats to represent a 2-dimensional point.
-# For this program, ​centroids​ will contain 4 points, because we’re making 4 clusters.
-centroids = []
-# assignment​, a list of lists, each containing exactly 2 integers to represent the indices of ​data
-# and ​centroids​, respectively. For example, if assignment contains [[8, 0], [9, 3]], then we would
-# say that ​data[8]​is assigned to ​centroid[0]​, and ​data[9]​ is assigned to centroid[3]
-# colors​, a list of strings that is the same length as ​centroids.
-assignment = []
-# colors​, a list of strings that is the same length as ​centroids
-color = ["red", "blue", "purple", "green"]
 
 
+def main():
+    # data​, a list of lists, each containing exactly
+    # 2 floats to represent a 2-dimensional point. For this program, ​
+    # data​ will contain 100 points. (This should be the same as input data.
+    data = DATA
+    # centroids​, a list of lists, each containing exactly
+    # 2 floats to represent a 2-dimensional point.
+    # For this program, ​centroids​ will contain 4 points, because we’re making 4 clusters.
+    centroids = []
+    # assignment​, a list of lists, each containing exactly 2 integers to represent the indices of ​data
+    # and ​centroids​, respectively. For example, if assignment contains [[8, 0], [9, 3]], then we would
+    # say that ​data[8]​is assigned to ​centroid[0]​, and ​data[9]​ is assigned to centroid[3]
+    # colors​, a list of strings that is the same length as ​centroids.
+    assignment = []
+    # colors​, a list of strings that is the same length as ​centroids
+    colors = ["red", "blue", "purple", "green"]
+    # Set the number of clusters (i.e., the value of ​k​ in ​k-means clustering​). We’ll use 4
+    number_of_clusters = 4
+    # Choose 4 random points to be your “centroids.” Our centroids will be chosen from our initial data.
+    # Choose 4 points at random from the input data set.
+    random_points = []
+    for index in range(number_of_clusters):
+        random_points.append(random.choice(data))
+
+    # For each point in the data set, find the closest centroid.
+    # Assign that point to the centroid.
+    # Once all the points are assigned to a centroid, we have our clusters
+    # The closest centroid
+    position_one = 0
+    position_two = 0
+    minimum = 100
+
+    for point_A in data:
+
+        for point_B in random_points:
+            # The closest centroid for a given point is chosen using the Euclidean distance algorithm
+            distance = abs(math.sqrt(((point_A[0] - point_B[0]) ** 2) + ((point_A[1] - point_B[1]) ** 2)))
+
+            if (distance != 0) and (distance < minimum):
+                minimum = distance
+                position_one = data.index(point_A)
+                position_two = random_points.index(point_B)
+
+        centroids.append(position_one)
+        centroids.append(position_two)
+
+        assignment.append(centroids)
+
+        minimum = 100
+        position_one = 0
+        position_two = 0
+        centroids = []
+
+    # Invoke the functions we’ve defined in ​kmeans_viz.py.
+    # You need to invoke only two functions: draw_centroids​ ​and ​draw_assignment.
+    kmeans_viz.draw_centroids(random_points, colors)
+    kmeans_viz.draw_assignment(random_points, data, assignment, colors)
 
 
-
-
-
+main()
