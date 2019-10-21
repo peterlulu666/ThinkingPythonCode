@@ -1,4 +1,4 @@
-from UPCNumber import is_valid_upc
+from upc import is_valid_upc
 
 
 def test_valid_upc():
