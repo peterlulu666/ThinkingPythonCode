@@ -14,6 +14,9 @@ RED_LINE = UPPERCASE_RED_LINE
 # # We would use list comprehension for list of string to uppercase
 # RED_LINE = [element.upper() for element in RED_LINE]
 
+# # We would use map() for list of string to uppercase
+# RED_LINE = list(map(lambda element: element.upper(), RED_LINE))
+
 
 def is_valid_station(station_name):
     """ Function is_valid_station
