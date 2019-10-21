@@ -16,6 +16,8 @@ def is_valid_upc(upc_list):
     # the number above is written from left to right,
     # but the algorithm goes right to left,
     # so we say 9 is at position 0, 8 is at position 1, etc
+    # Reverse the upc_list
+    # upc_list = upc_list[::-1]
     upc_list.reverse()
     # Use a loop to find the UPC number sum result
     upc_list_index = 0
@@ -26,8 +28,9 @@ def is_valid_upc(upc_list):
         else:
             # Digits in odd positions: *3
             odd_sum = odd_sum + element * 3
-
         upc_list_index += 1
+    # Sum the results
+    total_sum = even_sum + odd_sum
 
     # # Use a loop to find the UPC number sum result
     # for upc_list_index in range(0, len(upc_list)):
@@ -35,9 +38,33 @@ def is_valid_upc(upc_list):
     #         even_sum += upc_list[upc_list_index]
     #     else:
     #         odd_sum += upc_list[upc_list_index] * 3
+    # # Sum the results
+    # total_sum = even_sum + odd_sum
 
-    # Sum the results
-    total_sum = even_sum + odd_sum
+    # # Use a loop to find the UPC number sum result
+    # even_number_list = []
+    # odd_number_list = []
+    # # The for loop start at index 0 and the step size is 2. The list slicing syntax is [start:stop:step].
+    # for element in upc_list[::2]:
+    #     even_number_list.append(element)
+    # # The for loop start at index 1 and the step size is 2. The list slicing syntax is [start:stop:step].
+    # for element in upc_list[1::2]:
+    #     odd_number_list.append(element * 3)
+    # # Sum the results
+    # total_sum = sum(even_number_list + odd_number_list)
+
+    # # Use a loop to find the UPC number sum result
+    # even_number_list = []
+    # odd_number_list = []
+    # # The for loop start at index 0 and the step size is 2. The list slicing syntax is (start:stop:step).
+    # for upc_list_index in range(0, len(upc_list), 2):
+    #     even_number_list.append(upc_list[upc_list_index])
+    # # The for loop start at index 0 and the step size is 2. The list slicing syntax is (start:stop:step).
+    # for upc_list_index in range(1, len(upc_list), 2):
+    #     odd_number_list.append((upc_list[upc_list_index]) * 3)
+    # # Sum the results
+    # total_sum = sum(even_number_list + odd_number_list)
+
     # If it’s a valid UPC number, this result is a multiple of 10
     return total_sum % 10 == 0
 
@@ -47,9 +74,13 @@ def main():
     upc_list = [0, 7, 3, 8, 5, 4, 0, 0, 8, 0, 8, 9]
 
     # # User would enter the upc number separated by space
-    # str = input("Enter upc number ")
+    # upc_number = input("Enter upc number ")
     # # Store the string in the list
-    # upc_list = list(str.split(" "))
+    # upc_list = list(upc_number.split(" "))
+    # # # We would store the string in the list like this
+    # # # The user would enter pure digit upc number
+    # # upc_list = []
+    # # upc_list[:0] = upc_number
     # # List of string to list of integer
     # for i in range(0, len(upc_list)):
     #     upc_list[i] = int(upc_list[i])

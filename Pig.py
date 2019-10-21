@@ -15,12 +15,21 @@ def Pig(totalNumber, totalPoints):
         totalNumber = totalNumber + number
         # Total points in all rounds
         totalPoints = totalPoints + number
+        if number == 1:
+            totalPoints = totalPoints * 0
+            totalNumber = totalNumber * 0
+            print("The round is over and you have lost all the points you accumulated in the round")
+            print("Points in this round: " + str(totalNumber))
+            print("Your total is " + str(totalPoints))
+            return totalNumber
         print("Points in this round: " + str(totalNumber))
         print("Your total is " + str(totalPoints))
         if totalNumber > 20:
             break
         if totalPoints > 20:
             break
+        # If the value on the die is 1,
+        # then the round is over and the player has lost all the points they accumulated in the round.
 
     return totalNumber
 
