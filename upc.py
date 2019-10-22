@@ -8,15 +8,15 @@ def is_valid_upc(upc_list):
     # Initialize even_sum
     even_sum = 0
     # If the input is less than 2 digits long, or if all the digits have value 0,
-    # the code is ​not valid
+    #     # the code is ​not valid
     if len(upc_list) < 2:
         return False
     if upc_list.count(0) == len(upc_list):
         return False
-    # the number above is written from left to right,
+    # The number above is written from left to right,
     # but the algorithm goes right to left,
-    # so we say 9 is at position 0, 8 is at position 1, etc
-    # Reverse the upc_list
+    # so we say 9 is at position 0, 8 is at position 1, etc.
+    # Reverse the upc_list.
     # upc_list = upc_list[::-1]
     upc_list.reverse()
     # Use a loop to find the UPC number sum result
