@@ -4,7 +4,7 @@ def main():
     # if the number was greater than 10000,
     # we would use % 10 to find leftover
     thousands = (number // 1000) % 10
-    print("hundreds = ", thousands)
+    print("thousands = ", thousands)
 
     # number // 100 is the 100-units
     # if the number was greater than 1000,
