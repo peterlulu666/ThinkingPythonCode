@@ -1,5 +1,6 @@
 def main():
     number = int(input("Enter a number "))
+    print("The number contains " + (len(str(number))) + " digits. ")
     for i in range(1, (len(str(number))) + 1):
         zeros = (len(str(number)) - i) * "0"
         divisor = int("1" + (len(str(number)) - i) * "0")
