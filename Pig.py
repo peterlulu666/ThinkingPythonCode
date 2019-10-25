@@ -21,7 +21,7 @@ def Pig(totalNumber, totalPoints):
             print("The round is over and you have lost all the points you accumulated in the round")
             print("Points in this round: " + str(totalNumber))
             print("Your total is " + str(totalPoints))
-            return totalNumber
+            return number
         print("Points in this round: " + str(totalNumber))
         print("Your total is " + str(totalPoints))
         if totalNumber > 20:
@@ -41,12 +41,17 @@ def main():
     currentNumber = 0
     while True:
         # PlayerOne start to play, choose R or H
-        print("It is your turn, PlayerOne \n" +
+        print("PlayerOne start to play, choose R or H \n" +
               "R - Roll \n" +
               "H - Hold \n")
 
-        totalPointOne = Pig(currentNumber, totalPointOne) + totalPointOne
-        print("You choose hold and your total is " + str(totalPointOne))
+        pigOne = Pig(currentNumber, totalPointOne)
+        if pigOne == 1:
+            totalPointOne = 0
+            print("Round ends. \n")
+        else:
+            totalPointOne = pigOne + totalPointOne
+            print("You choose hold and your total is " + str(totalPointOne))
 
         if totalPointOne >= 20:
             print("Player one wins ")
@@ -56,8 +61,13 @@ def main():
                   "R - Roll \n" +
                   "H - Hold \n")
 
-            totalPointTwo = Pig(currentNumber, totalPointTwo) + totalPointTwo
-            print("You choose hold and your total is " + str(totalPointTwo))
+            pigTwo = Pig(currentNumber, totalPointTwo)
+            if pigTwo == 1:
+                totalPointTwo = 0
+                print("Round ends. \n")
+            else:
+                totalPointTwo = pigTwo + totalPointTwo
+                print("You choose hold and your total is " + str(totalPointTwo))
 
             if totalPointTwo >= 20:
                 print("Player two wins ")
