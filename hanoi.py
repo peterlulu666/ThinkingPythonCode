@@ -1,22 +1,23 @@
 import hanoi_viz
 
 
-# prompts the user for the number of disks and kicks off the process
-number_of_disk = input("What is the number of disk (2-5)? \n")
-# Prompt the user to give you the number of disks. Prompt them repeatedly until they give you a valid number
-while True:
-    # make sure that the user has provided an integer, not a float or a string or anything else
-    # isdigit() checks whether the string consists of digits only
-    if not number_of_disk.isdigit():
-        print("Oops, that wasn't a number, please try again!")
-        number_of_disk = input("What is the number of disk (2-5)? \n")
-    else:
-        # The integer they give you must be between 1 and 8 (inclusive)
-        if 1 <= int(number_of_disk) <= 8:
-            break
-        else:
+def number_of_disks():
+    # prompts the user for the number of disks and kicks off the process
+    number_of_disk = input("What is the number of disk (2-5)? \n")
+    # Prompt the user to give you the number of disks. Prompt them repeatedly until they give you a valid number
+    while True:
+        # make sure that the user has provided an integer, not a float or a string or anything else
+        # isdigit() checks whether the string consists of digits only
+        if not number_of_disk.isdigit():
             print("Oops, that wasn't a number, please try again!")
             number_of_disk = input("What is the number of disk (2-5)? \n")
+        else:
+            # The integer they give you must be between 1 and 8 (inclusive)
+            if 1 <= int(number_of_disk) <= 8:
+                return int(number_of_disk)
+            else:
+                print("Oops, that wasn't a number, please try again!")
+                number_of_disk = input("What is the number of disk (2-5)? \n")
 
 
 # A recursive function to move disks from one tower to another
@@ -40,9 +41,10 @@ def main():
     source = "Tower_A"
     target = "Tower_B"
     middle = "Tower_C"
+    number_of_disk = number_of_disks()
     # Call the given ​initialize_towers​ function before calling your own, recursive function
-    towers = hanoi_viz.initialize_towers(int(number_of_disk), source, target, middle)
-    move_tower(int(number_of_disk), source, target, middle, towers)
+    towers = hanoi_viz.initialize_towers(number_of_disk, source, target, middle)
+    move_tower(number_of_disk, source, target, middle, towers)        
 
 
 main()
