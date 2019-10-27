@@ -1,9 +1,11 @@
 def rev(number_list):
     reverse_list = []
     for index in range(0, len(number_list)):
-        reverse_list.append(number_list[(len(number_list) - index - 1)])
+        reverse_list += [(number_list[(len(number_list) - index - 1)])]
+        # reverse_list.append(number_list[(len(number_list) - index - 1)])
     # for index in range((len(number_list) - 1), -1, -1):
-    #     reverse_list.append(number_list[index])
+    #     reverse_list += [(number_list[index])]
+    #     # reverse_list.append(number_list[index])
     return reverse_list
 
 
