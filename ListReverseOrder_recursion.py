@@ -7,10 +7,20 @@ def rev(number_list):
     return reverse_list
 
 
+def rev_recursion(number_list):
+    if len(number_list) == 0:
+        return []
+    else:
+        return [number_list[-1]] + rev(number_list[:-1])
+
+
 def main():
     lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     revlist = rev(lst)
-    print(lst, 'in reverse is', revlist)        
+    print(lst, 'in reverse is', revlist)
+    print(" \n")
+    rev_list_recursion = rev_recursion(lst)
+    print(lst, 'in reverse is', rev_list_recursion)
 
 
 main()
