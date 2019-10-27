@@ -45,3 +45,6 @@ def main():
     # Call the given ​initialize_towers​ function before calling your own, recursive function
     towers = hanoi_viz.initialize_towers(number_of_disks(), source, target, middle)
     move_tower(number_of_disk, source, target, middle, towers)
+
+
+main()
