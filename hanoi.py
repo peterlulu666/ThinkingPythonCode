@@ -38,13 +38,13 @@ def main():
     # Choose names for the towers. These can be anything you like,
     # but keep them short or the illustrations won’t look right
     # we want to get both disks from A to B, and we use C as a helper
-    source = "Tower_A"
-    target = "Tower_B"
-    middle = "Tower_C"
+    source = "A"
+    target = "B"
+    middle = "C"
     number_of_disk = number_of_disks()
     # Call the given ​initialize_towers​ function before calling your own, recursive function
     towers = hanoi_viz.initialize_towers(number_of_disk, source, target, middle)
-    move_tower(number_of_disk, source, target, middle, towers)        
+    move_tower(number_of_disk, source, target, middle, towers)
 
 
 main()
