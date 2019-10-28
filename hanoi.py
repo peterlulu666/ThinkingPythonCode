@@ -15,8 +15,9 @@ def number_of_disks():
             number_of_disk = input("What is the number of disk (1-8)? \n")
         else:
             # The integer they give you must be between 1 and 8 (inclusive)
-            if min_disk <= int(number_of_disk) <= max_disk:
-                return int(number_of_disk)
+            number_of_disk = int(number_of_disk)
+            if min_disk <= number_of_disk <= max_disk:
+                return number_of_disk
             else:
                 print("Oops, that wasn't a number, please try again!")
                 number_of_disk = input("What is the number of disk (1-8)? \n")
