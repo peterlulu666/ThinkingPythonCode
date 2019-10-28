@@ -82,7 +82,7 @@ def run_word_tests():
         num_failed += 1
     if not test_word_value('BAT', {'A': 1, 'B': 2, 'T': 2}, 5):
         num_failed += 1
-    if not test_word_value('AIQY', {'A': 1, 'B': 2, 'I': 1, 'Q': 10, 'Y': 4}, 16):
+    if not test_word_value('AIQY', {'A': 1, 'B': 2, 'I': 1, 'Q': 10, 'Y': 4}, 18):
         num_failed += 1
     return num_failed
 

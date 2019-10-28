@@ -27,6 +27,7 @@ def get_word_value(word, word_dictionary):
     """
     # Initialize the point
     point = 0
+    word = word.upper()
     # When the key does not exist in dictionary returns 0
     for index in range(0, len(word)):
         if word[index] not in word_dictionary.keys():
@@ -34,18 +35,3 @@ def get_word_value(word, word_dictionary):
     for letter in word_dictionary:
         point = point + int(word_dictionary[letter])
     return point
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
