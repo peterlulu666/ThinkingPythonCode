@@ -25,10 +25,27 @@ def get_word_value(word, word_dictionary):
     Example Inputs: ​'HI', {'H':4, 'I':1}​. Expected output: ​5
     Example Inputs: ​'HELLO', {'H':4, 'I':1}​. Expected output: ​0
     """
+    # Initialize the point
     point = 0
+    # When the key does not exist in dictionary returns 0
     for index in range(0, len(word)):
         if word[index] not in word_dictionary.keys():
-            return 0
+            return point
     for letter in word_dictionary:
         point = point + int(word_dictionary[letter])
     return point
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
