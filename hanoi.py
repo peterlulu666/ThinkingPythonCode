@@ -22,6 +22,7 @@ def number_of_disks():
                 print("Oops, enter a number between 1 and 8, please try again!")
                 number_of_disk = input("What is the number of disk (1-8)? \n")
 
+
 # def number_of_disks():
 #     min_disk = 1
 #     max_disk = 8
