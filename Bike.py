@@ -18,8 +18,6 @@ def main():
           " bikes coming \n" +
           "I'm keeping the Leftovers for myself")
     leftWheels = wheels - numberOfBike * WHEELSNEEDED
-    leftWheels2 = wheels % WHEELSNEEDED
-    print(leftWheels2)
     leftFrame = frames - numberOfBike * FRAMESNEEDED
     leftLinks = links - numberOfBike * LINKSNEEDED
     print("Leftovers: ")
