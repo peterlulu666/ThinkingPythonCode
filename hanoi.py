@@ -11,7 +11,7 @@ def number_of_disks():
         # make sure that the user has provided an integer, not a float or a string or anything else
         # isdigit() checks whether the string consists of digits only
         if not number_of_disk.isdigit():
-            print("Oops, that wasn't a number, please try again!")
+            print("Oops, that wasn't an positive integer number, please try again!")
             number_of_disk = input("What is the number of disk (1-8)? \n")
         else:
             # The integer they give you must be between 1 and 8 (inclusive)
@@ -36,7 +36,7 @@ def number_of_disks():
 #                 print("Oops, enter a number between 1 and 8, please try again!")
 #
 #         except ValueError:
-#             print("Oops, that wasn't a number, please try again!")
+#             print("Oops, that wasn't an positive integer number, please try again!")
 
 
 # A recursive function to move disks from one tower to another
