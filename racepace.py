@@ -5,41 +5,34 @@ def main():
     while True:
         # Number of kilometers they ran, a floating-point number
         while True:
-            # make sure that the user has provided an integer, not a float or a string or anything else
-            # isdigit() checks whether the string consists of digits only
             try:
+                # Thedistance is a float and is always greater than zero
                 kilometers = float(input("How many kilometers did you run? \n"))
-                if kilometers >= 0:
+                if kilometers > 0:
                     break
                 else:
                     print("Oops, that wasn't a positive number, please try again!")
             except ValueError:
                 print("Oops, that wasn't a floating-point number, please try again!")
         # Number of hours, a whole number
-        hours = input("How many hours did it take you? \n")
         while True:
-            # make sure that the user has provided an integer, not a float or a string or anything else
-            # isdigit() checks whether the string consists of digits only
+            hours = input("How many hours did it take you? \n")
             if not hours.isdigit():
                 print("Oops, that wasn't a whole number, please try again!")
             else:
                 hours = int(hours)
                 break
-            hours = input("How many hours did it take you? \n")
         # Number of minutes, a whole number
-        minutes = input("How many minutes? \n")
         while True:
-            # make sure that the user has provided an integer, not a float or a string or anything else
-            # isdigit() checks whether the string consists of digits only
+            minutes = input("How many minutes? \n")
             if not minutes.isdigit():
                 print("Oops, that wasn't a whole number, please try again!")
             else:
                 minutes = int(minutes)
                 break
-            minutes = input("How many minutes? \n")
         # Hours and minutes are both whole numbers,and either one may be zero, but the ​total​ time is never zero
         if hours == 0 and minutes == 0:
-            print("The ​total​ time can not both be zero \n")
+            print("The ​total​ time can not be zero \n")
             continue
         else:
             break
