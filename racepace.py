@@ -6,7 +6,7 @@ def main():
         # Number of kilometers they ran, a floating-point number
         while True:
             try:
-                # Thedistance is a float and is always greater than zero
+                # The distance is a float and is always greater than zero
                 kilometers = float(input("How many kilometers did you run? \n"))
                 if kilometers > 0:
                     break
