@@ -19,6 +19,7 @@ class Time:
         :return: nothing
         Does: Set the format attribute to the given integer
         """
+        # Number between 0 and 59
         while True:
             if 0 <= second <= 59:
                 self.second = second
@@ -26,7 +27,7 @@ class Time:
             else:
                 print("Oops, enter a number between 0 and 59, please try again!")
                 second = int(input("Enter second "))
-
+        # Number between 0 and 59
         while True:
             if 0 <= minute <= 59:
                 self.minute = minute
@@ -34,7 +35,7 @@ class Time:
             else:
                 print("Oops, enter a number between 0 and 59, please try again!")
                 minute = int(input("Enter minute "))
-
+        # Number between 0 and 23
         while True:
             if 0 <= hour <= 23:
                 self.hour = hour
