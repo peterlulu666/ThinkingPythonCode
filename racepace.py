@@ -6,15 +6,18 @@ def main():
         # Number of kilometers they ran, a floating-point number
         while True:
             kilometers = input("How many kilometers did you run? \n")
-            try:
-                # The distance is a float and is always greater than zero
-                kilometers = float(kilometers)
-                if kilometers > 0:
-                    break
-                else:
-                    print("Oops, that wasn't a positive number, please try again!")
-            except ValueError:
-                print("Oops, that wasn't a floating-point number, please try again!")
+            if kilometers[0] == "0" and kilometers[1] != ".":
+                print("The number is starting with 0")
+            else:
+                try:
+                    # The distance is a float and is always greater than zero
+                    kilometers = float(kilometers)
+                    if kilometers > 0:
+                        break
+                    else:
+                        print("Oops, that wasn't a positive number, please try again!")
+                except ValueError:
+                    print("Oops, that wasn't a floating-point number, please try again!")
         # Number of hours, a whole number
         while True:
             hours = input("How many hours did it take you? \n")
