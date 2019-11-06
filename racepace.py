@@ -18,19 +18,27 @@ def main():
         # Number of hours, a whole number
         while True:
             hours = input("How many hours did it take you? \n")
-            if not hours.isdigit():
-                print("Oops, that wasn't a whole number, please try again!")
+            if hours[0] == "0":
+                print("The number is starting with 0")
+                continue
             else:
-                hours = int(hours)
-                break
+                if not hours.isdigit():
+                    print("Oops, that wasn't a whole number, please try again!")
+                else:
+                    hours = int(hours)
+                    break
         # Number of minutes, a whole number
         while True:
             minutes = input("How many minutes? \n")
-            if not minutes.isdigit():
-                print("Oops, that wasn't a whole number, please try again!")
+            if minutes[0] == "0":
+                print("The number is starting with 0")
+                continue
             else:
-                minutes = int(minutes)
-                break
+                if not minutes.isdigit():
+                    print("Oops, that wasn't a whole number, please try again!")
+                else:
+                    minutes = int(minutes)
+                    break
         # Hours and minutes are both whole numbers,and either one may be zero, but the ​total​ time is never zero
         if hours == 0 and minutes == 0:
             print("The ​total​ time can not be zero \n")
