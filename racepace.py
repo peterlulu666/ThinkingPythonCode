@@ -6,42 +6,46 @@ def main():
         # Number of kilometers they ran, a floating-point number
         while True:
             kilometers = input("How many kilometers did you run? \n")
-            if kilometers[0] == "0" and kilometers[1] != ".":
-                print("The number is starting with 0")
-            else:
-                try:
-                    # The distance is a float and is always greater than zero
-                    kilometers = float(kilometers)
-                    if kilometers > 0:
-                        break
-                    else:
-                        print("Oops, that wasn't a positive number, please try again!")
-                except ValueError:
-                    print("Oops, that wasn't a floating-point number, please try again!")
+            if len(kilometers) > 2:
+                if kilometers[0] == "0" and kilometers[1] != ".":
+                    print("The number is starting with 0")
+                    continue
+            try:
+                # The distance is a float and is always greater than zero
+                kilometers = float(kilometers)
+                if kilometers > 0:
+                    break
+                else:
+                    print("Oops, that wasn't a positive number, please try again!")
+            except ValueError:
+                print("Oops, that wasn't a floating-point number, please try again!")
         # Number of hours, a whole number
         while True:
             hours = input("How many hours did it take you? \n")
-            if hours[0] == "0":
-                print("The number is starting with 0")
-                continue
-            else:
-                if not hours.isdigit():
-                    print("Oops, that wasn't a whole number, please try again!")
-                else:
-                    hours = int(hours)
+            if len(hours) > 1:
+                if hours[0] == "0" and hours[1] != ".":
+                    print("The number is starting with 0")
+                    continue
+            try:
+                hours = int(hours)
+                if hours >= 0:
                     break
+                else:
+                    print("Oops, that wasn't a positive number, please try again!")
+            except ValueError:
+                print("Oops, that wasn't a whole number, please try again!")
         # Number of minutes, a whole number
         while True:
             minutes = input("How many minutes? \n")
-            if minutes[0] == "0":
-                print("The number is starting with 0")
-                continue
+            if len(minutes) > 1:
+                if minutes[0] == "0" and minutes[1] != ".":
+                    print("The number is starting with 0")
+                    continue
+            if not minutes.isdigit():
+                print("Oops, that wasn't a whole number, please try again!")
             else:
-                if not minutes.isdigit():
-                    print("Oops, that wasn't a whole number, please try again!")
-                else:
-                    minutes = int(minutes)
-                    break
+                minutes = int(minutes)
+                break
         # Hours and minutes are both whole numbers,and either one may be zero, but the ​total​ time is never zero
         if hours == 0 and minutes == 0:
             print("The ​total​ time can not be zero \n")
