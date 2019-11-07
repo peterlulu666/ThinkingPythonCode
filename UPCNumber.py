@@ -79,6 +79,9 @@ def main():
     # upc_list = list(upc_number.split(" "))
     # # # We would store the string in the list like this
     # # # The user would enter pure digit upc number
+    # # Consecutive list of string to list of integer
+    # # Contiguous list of string to list of integer
+    # # successive list of string to list of integer
     # # # Initialize the ipc_list
     # # upc_list = []
     # # # Store string to list of string. The characters in string would be the elements in list of string.
@@ -90,6 +93,8 @@ def main():
     # # User would enter the pure digit upc number
     # upc_number = input("Enter upc number ")
     # # Consecutive list of string to list of integer
+    # # Contiguous list of string to list of integer
+    # # successive list of string to list of integer
     # upc_list = []
     # for i in str(upc_number):
     #     upc_list.append(int(i))
