@@ -12,6 +12,7 @@ def main():
                     continue
             try:
                 # The distance is a float and is always greater than zero
+                # In Python the same variables can be reused to store values of different types. This is dynamic typing.
                 kilometers = float(kilometers)
                 if kilometers > 0:
                     break
@@ -27,6 +28,7 @@ def main():
                     print("The number is starting with 0")
                     continue
             try:
+                # In Python the same variables can be reused to store values of different types. This is dynamic typing.
                 hours = int(hours)
                 if hours >= 0:
                     break
@@ -44,6 +46,7 @@ def main():
             if not minutes.isdigit():
                 print("Oops, that wasn't a whole number, please try again!")
             else:
+                # In Python the same variables can be reused to store values of different types. This is dynamic typing.
                 minutes = int(minutes)
                 break
         # Hours and minutes are both whole numbers,and either one may be zero, but the ​total​ time is never zero
